@@ -10,7 +10,7 @@ class Lidar_Lite():
     self.distReadReg2 = 0x98
     self.velWriteReg = 0x04
     self.velWriteVal = 0x08
-    self.velReadVal = 0x09
+    self.velReadReg = 0x09
 
   def connect(self, bus):
     try:
@@ -39,9 +39,9 @@ class Lidar_Lite():
     self.writeAndWait(self.distWriteReg, self.distWriteVal)
     self.writeAndWait(self.velWriteReg, self.velWriteVal)
     vel = self.readAndWait(self.velReadReg)
-    return signedInt(vel)
+    return self.signedInt(vel)
 
-  def signedInt(value):
+  def signedInt(self, value):
     if value > 127:
       return (256-value) * (-1)
     else:

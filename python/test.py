@@ -7,3 +7,4 @@ if connected < -1:
   print "Not Connected"
 
 print lidar.getDistance()
+print lidar.getVelocity()
