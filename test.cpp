@@ -11,7 +11,7 @@ int main(){
     while(l1.err >= 0){
       int dist = l1.getDistance();
       printf("%d\n", dist);
-      usleep(500000);
+      usleep(100000);
     }
   }
 }
