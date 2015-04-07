@@ -1,4 +1,4 @@
-#include "lidar_lite.h"
+#include <include/lidar_lite.h>
 #include <cstdio>
 #include <unistd.h>
 
