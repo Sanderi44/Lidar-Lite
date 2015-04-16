@@ -7,7 +7,7 @@ class Lidar_Lite():
     self.distWriteReg = 0x00
     self.distWriteVal = 0x04
     self.distReadReg1 = 0x8f
-    self.distReadReg2 = 0x98
+    self.distReadReg2 = 0x10
     self.velWriteReg = 0x04
     self.velWriteVal = 0x08
     self.velReadReg = 0x09
