@@ -69,7 +69,7 @@ int Lidar_Lite::getDistance( void ){
   } else {
     buf[0] = res;
   }
-  e = readAndWait(0x98);
+  e = readAndWait(0x10);
   if (e < 0){
     return e;
   } else {
