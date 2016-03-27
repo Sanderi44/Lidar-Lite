@@ -49,8 +49,8 @@ int Lidar_Lite::readAndWait(int readRegister){
   usleep(10000);
   if (res < 0){
     err = errno;
-    return -1;
     printf("Read Error: %d", err);
+    return -1;
   } else {
     return 0;
   }
