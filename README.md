@@ -13,3 +13,7 @@ use this command to install `i2c-dev`:
 
 `apt-get install libi2c-dev`
 
+I found a great tutorial (using my library!) on this website: https://mobiusstripblog.wordpress.com/2016/12/26/first-blog-post/
+Please check it out!
+
+
