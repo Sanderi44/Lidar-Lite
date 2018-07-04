@@ -29,11 +29,15 @@ class Lidar_Lite():
     time.sleep(0.02)
     return res
 
+  def readDistAndWait(self, register):
+    res = self.bus.read_i2c_block_data(self.address, register, 2)
+    time.sleep(0.02)
+    return (res[0] << 8 | res[1])
+
   def getDistance(self):
     self.writeAndWait(self.distWriteReg, self.distWriteVal)
-    dist1 = self.readAndWait(self.distReadReg1)
-    dist2 = self.readAndWait(self.distReadReg2)
-    return (dist1 << 8) + dist2
+    dist = self.readDistAndWait(self.distReadReg1)
+    return dist
 
   def getVelocity(self):
     self.writeAndWait(self.distWriteReg, self.distWriteVal)
