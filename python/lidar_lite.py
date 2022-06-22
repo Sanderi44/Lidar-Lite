@@ -35,8 +35,13 @@ class Lidar_Lite():
     return (res[0] << 8 | res[1])
 
   def getDistance(self):
-    self.writeAndWait(self.distWriteReg, self.distWriteVal)
-    dist = self.readDistAndWait(self.distReadReg1)
+    try:
+        self.writeAndWait(self.distWriteReg, self.distWriteVal)
+        dist = self.readDistAndWait(self.distReadReg1)
+    except (IOError, OSError) as err:
+        print(err)
+        return -1
+        
     return dist
 
   def getVelocity(self):
